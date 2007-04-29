@@ -1,6 +1,6 @@
 %define	module	Crypt-SSLeay
 %define	name	perl-%{module}
-%define	version	0.53
+%define	version	0.54
 %define	release	%mkrel 1
 
 Summary:	Support for the https protocol under LWP
@@ -12,8 +12,6 @@ Group:		Development/Perl
 URL:		http://search.cpan.org/dist/%{module}
 Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/Crypt/Crypt-SSLeay-%{version}.tar.bz2
 Patch0:		perl-Crypt-SSLeay-cryptdef.patch
-Patch1:		perl-Crypt-SSLeay-lib64.patch
-Patch2:		perl-Crypt-SSLeay-openssl-098.patch
 BuildRequires:	openssl-devel
 BuildRequires:	perl-devel
 BuildRequires:	perl-URI
@@ -35,8 +33,6 @@ Eric Young (eay@cryptsoft.com)
 
 %setup -q -n %{module}-%{version}
 %patch0 -p1 -b .cryptdef
-%patch1 -p1 -b .lib64
-%patch2 -p1 -b .openssl-098
 
 %build
 CFLAGS="$RPM_OPT_FLAGS" echo | %{__perl} Makefile.PL INSTALLDIRS=vendor
