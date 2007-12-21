@@ -15,6 +15,7 @@ Patch0:		perl-Crypt-SSLeay-cryptdef.patch
 BuildRequires:	openssl-devel
 BuildRequires:	perl-devel
 BuildRequires:	perl-URI
+BuildRoot:	%{_tmppath}/%{name}-%{version}-root
 Requires:	perl
 
 %description 
