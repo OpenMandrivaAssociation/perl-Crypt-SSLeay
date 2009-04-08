@@ -1,7 +1,7 @@
 %define	module	Crypt-SSLeay
 %define	name	perl-%{module}
 %define	version	0.57
-%define	release	%mkrel 3
+%define	release	%mkrel 4
 
 Summary:	Support for the https protocol under LWP
 Name:		%{name}
