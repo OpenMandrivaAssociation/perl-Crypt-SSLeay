@@ -1,21 +1,21 @@
-%define	module	Crypt-SSLeay
-%define	name	perl-%{module}
-%define	version	0.57
-%define	release	%mkrel 4
+%define	upstream_name	 Crypt-SSLeay
+%define	upstream_version 0.57
+
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
 
 Summary:	Support for the https protocol under LWP
-Name:		%{name}
-Version:	%version
-Release:	%release
-License:	GPL or Artistic
+License:	GPL+ or Artistic
 Group:		Development/Perl
-URL:		http://search.cpan.org/dist/%{module}
-Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/Crypt/Crypt-SSLeay-%{version}.tar.bz2
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/Crypt/Crypt-SSLeay-%{upstream_version}.tar.bz2
 Patch0:		perl-Crypt-SSLeay-cryptdef.patch
+
 BuildRequires:	openssl-devel
 BuildRequires:	perl-devel
 BuildRequires:	perl-URI
-BuildRoot:	%{_tmppath}/%{name}-%{version}-root
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
 Requires:	perl
 
 %description 
@@ -30,8 +30,7 @@ This product includes cryptographic software written by
 Eric Young (eay@cryptsoft.com)
 
 %prep
-
-%setup -q -n %{module}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 %patch0 -p1 -b .cryptdef
 
 %build
@@ -55,5 +54,3 @@ rm -rf $RPM_BUILD_ROOT
 %{perl_vendorarch}/Crypt
 %{perl_vendorarch}/Net
 %{_mandir}/*/*
-
-
