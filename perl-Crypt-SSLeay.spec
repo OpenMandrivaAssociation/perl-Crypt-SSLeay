@@ -1,5 +1,5 @@
 %define	upstream_name	 Crypt-SSLeay
-%define	upstream_version 0.57
+%define upstream_version 0.58
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
@@ -9,7 +9,7 @@ Summary:	Support for the https protocol under LWP
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}
-Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/Crypt/Crypt-SSLeay-%{upstream_version}.tar.bz2
+Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/Crypt/Crypt-SSLeay-%{upstream_version}.tar.gz
 Patch0:		perl-Crypt-SSLeay-cryptdef.patch
 
 BuildRequires:	openssl-devel
@@ -38,7 +38,7 @@ CFLAGS="$RPM_OPT_FLAGS" echo | %{__perl} Makefile.PL INSTALLDIRS=vendor
 %make
 
 %check
-make test
+%make test
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -49,7 +49,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(-,root,root)
-%doc README
+%doc README META.yml
 %{perl_vendorarch}/auto/Crypt
 %{perl_vendorarch}/Crypt
 %{perl_vendorarch}/Net
