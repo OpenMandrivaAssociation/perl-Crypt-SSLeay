@@ -3,7 +3,7 @@
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 7
+Release:    8
 Summary:	Support for the https protocol under LWP
 License:	GPL+ or Artistic
 Group:		Development/Perl
@@ -13,9 +13,8 @@ Patch0:		perl-Crypt-SSLeay-cryptdef.patch
 # https://rt.cpan.org/Ticket/Display.html?id=61883
 Patch1:		0001-Add-SNI-support-to-Crypt-SSLeay.patch
 BuildRequires:	openssl-devel
-BuildRequires:	perl-devel
+BuildRequires:	perl-devel >= 2:5.14
 BuildRequires:	perl-URI
-BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}
 
 %description 
 This perl module provides support for the https protocol under LWP, so
