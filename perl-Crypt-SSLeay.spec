@@ -15,6 +15,7 @@ Patch1:		0001-Add-SNI-support-to-Crypt-SSLeay.patch
 BuildRequires:	openssl-devel
 BuildRequires:	perl-devel >= 2:5.14
 BuildRequires:	perl-URI
+BuildRequires:	perl-List-MoreUtils >= 0.320.0-3
 
 %description 
 This perl module provides support for the https protocol under LWP, so
