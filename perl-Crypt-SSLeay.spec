@@ -1,14 +1,14 @@
 %define	modname	Crypt-SSLeay
-%define modver	0.58
+%define modver 0.72
 
 Summary:	Support for the https protocol under LWP
 Name:		perl-%{modname}
 Version:	%perl_convert_version %{modver}
-Release:	21
+Release:	1
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{modname}
-Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/Crypt/Crypt-SSLeay-%{modver}.tar.gz
+Source0:	ftp://ftp.cpan.org:21/pub/CPAN/modules/by-module/Crypt/%{modname}-%{modver}.tar.gz
 Patch0:		perl-Crypt-SSLeay-cryptdef.patch
 # https://rt.cpan.org/Ticket/Display.html?id=61883
 Patch1:		0001-Add-SNI-support-to-Crypt-SSLeay.patch
@@ -34,7 +34,7 @@ Eric Young (eay@cryptsoft.com)
 %patch1 -p1 -b .sni
 
 %build
-%__perl Makefile.PL INSTALLDIRS=vendor < /dev/null
+perl Makefile.PL INSTALLDIRS=vendor < /dev/null
 %make CFLAGS="%{optflags}"
 
 %check
@@ -49,4 +49,3 @@ Eric Young (eay@cryptsoft.com)
 %{perl_vendorarch}/Crypt
 %{perl_vendorarch}/Net
 %{_mandir}/man3/*
-
