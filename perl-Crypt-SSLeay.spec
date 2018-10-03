@@ -16,6 +16,7 @@ BuildRequires:	perl-URI
 BuildRequires:	perl-List-MoreUtils >= 0.320.0-3
 BuildRequires:	perl-Path-Class
 BuildRequires:	perl(ExtUtils::CBuilder)
+BuildRequires:	perl(Try::Tiny)
 
 %description 
 This perl module provides support for the https protocol under LWP, so
