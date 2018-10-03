@@ -12,6 +12,7 @@ Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/Crypt/Crypt-SSLeay-%{modv
 Patch1:		Crypt-SSLeay-0.72-Do-not-use-SSLv2_client_method-with-OpenSSL-1.1.0.patch
 Patch2:		Crypt-SSLeay-0.72-Fix-building-on-Perl-without-dot-in-INC.patch
 BuildRequires:	pkgconfig(openssl)
+BuildRequires:	pkgconfig(zlib)
 BuildRequires:	perl-devel >= 2:5.14
 BuildRequires:	perl-URI
 BuildRequires:	perl-List-MoreUtils >= 0.320.0-3
