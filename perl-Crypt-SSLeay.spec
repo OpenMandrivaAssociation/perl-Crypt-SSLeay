@@ -34,7 +34,7 @@ Eric Young (eay@cryptsoft.com)
 
 %prep
 %setup -qn %{modname}-%{modver}
-%apply_patches
+%autopatch -p1
 
 %build
 %__perl Makefile.PL INSTALLDIRS=vendor < /dev/null
