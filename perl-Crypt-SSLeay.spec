@@ -36,6 +36,9 @@ Eric Young (eay@cryptsoft.com)
 %setup -qn %{modname}-%{modver}
 %autopatch -p1
 
+# (tpg) adapt to OpenSSL3
+grep -rl "SSLv3_client_method" * | xargs sed -i '/SSLv3_client_method/TLS_client_method/g'
+
 %build
 perl Makefile.PL INSTALLDIRS=vendor < /dev/null
 %make_build CFLAGS="%{optflags}"
