@@ -4,7 +4,7 @@
 Summary:	Support for the https protocol under LWP
 Name:		perl-%{modname}
 Version:	%perl_convert_version %{modver}
-Release:	2
+Release:	3
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{modname}
@@ -37,14 +37,14 @@ Eric Young (eay@cryptsoft.com)
 %autopatch -p1
 
 %build
-%__perl Makefile.PL INSTALLDIRS=vendor < /dev/null
-%make CFLAGS="%{optflags}"
+perl Makefile.PL INSTALLDIRS=vendor < /dev/null
+%make_build CFLAGS="%{optflags}"
 
 %check
 %make test
 
 %install
-%makeinstall_std
+%make_install
 
 %files
 %doc README.md META.yml
