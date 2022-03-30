@@ -1,5 +1,8 @@
-%define	modname	Crypt-SSLeay
-%define modver	0.72
+# Work around incomplete debug packages
+%global _empty_manifest_terminate_build 0
+
+%define modname Crypt-SSLeay
+%define modver 0.72
 
 Summary:	Support for the https protocol under LWP
 Name:		perl-%{modname}
@@ -33,8 +36,7 @@ This product includes cryptographic software written by
 Eric Young (eay@cryptsoft.com)
 
 %prep
-%setup -qn %{modname}-%{modver}
-%autopatch -p1
+%autosetup -n %{modname}-%{modver} -p1
 
 # (tpg) adapt to OpenSSL3
 grep -rl "SSLv3_client_method" * | xargs sed -i 's/SSLv3_client_method/TLS_client_method/g'
@@ -54,5 +56,4 @@ perl Makefile.PL INSTALLDIRS=vendor < /dev/null
 %{perl_vendorarch}/auto/Crypt
 %{perl_vendorarch}/Crypt
 %{perl_vendorarch}/Net
-%{_mandir}/man3/*
-
+%doc %{_mandir}/man3/*
