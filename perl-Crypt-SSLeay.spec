@@ -7,7 +7,7 @@
 Summary:	Support for the https protocol under LWP
 Name:		perl-%{modname}
 Version:	%perl_convert_version %{modver}
-Release:	4
+Release:	5
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://search.cpan.org/dist/%{modname}
