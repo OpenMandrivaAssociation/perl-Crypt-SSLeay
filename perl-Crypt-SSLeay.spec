@@ -2,23 +2,22 @@
 %global _empty_manifest_terminate_build 0
 
 %define modname Crypt-SSLeay
-%define modver 0.72
 
 Summary:	Support for the https protocol under LWP
 Name:		perl-%{modname}
-Version:	%perl_convert_version %{modver}
-Release:	5
+Version:	0.72
+Release:	1
 License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		https://search.cpan.org/dist/%{modname}
-Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/Crypt/Crypt-SSLeay-%{modver}.tar.gz
+Url:		https://metacpan.org/pod/Crypt::SSLeay
+Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/Crypt/Crypt-SSLeay-%{version}.tar.gz
 Patch1:		Crypt-SSLeay-0.72-Do-not-use-SSLv2_client_method-with-OpenSSL-1.1.0.patch
 Patch2:		Crypt-SSLeay-0.72-Fix-building-on-Perl-without-dot-in-INC.patch
 BuildRequires:	pkgconfig(openssl)
 BuildRequires:	pkgconfig(zlib)
-BuildRequires:	perl-devel >= 2:5.14
+BuildRequires:	perl-devel
 BuildRequires:	perl-URI
-BuildRequires:	perl-List-MoreUtils >= 0.320.0-3
+BuildRequires:	perl-List-MoreUtils
 BuildRequires:	perl-Path-Class
 BuildRequires:	perl(ExtUtils::CBuilder)
 BuildRequires:	perl(Try::Tiny)
@@ -36,7 +35,7 @@ This product includes cryptographic software written by
 Eric Young (eay@cryptsoft.com)
 
 %prep
-%autosetup -n %{modname}-%{modver} -p1
+%autosetup -n %{modname}-%{version} -p1
 
 # (tpg) adapt to OpenSSL3
 grep -rl "SSLv3_client_method" * | xargs sed -i 's/SSLv3_client_method/TLS_client_method/g'
