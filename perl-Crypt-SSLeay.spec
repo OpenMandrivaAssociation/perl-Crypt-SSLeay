@@ -13,6 +13,7 @@ Url:		https://metacpan.org/pod/Crypt::SSLeay
 Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/Crypt/Crypt-SSLeay-%{version}.tar.gz
 Patch1:		Crypt-SSLeay-0.72-Do-not-use-SSLv2_client_method-with-OpenSSL-1.1.0.patch
 Patch2:		Crypt-SSLeay-0.72-Fix-building-on-Perl-without-dot-in-INC.patch
+BuildRequires:	make
 BuildRequires:	pkgconfig(openssl)
 BuildRequires:	pkgconfig(zlib)
 BuildRequires:	perl-devel
