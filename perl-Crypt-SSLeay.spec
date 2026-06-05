@@ -6,7 +6,7 @@
 Summary:	Support for the https protocol under LWP
 Name:		perl-%{modname}
 Version:	0.72
-Release:	2
+Release:	3
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://metacpan.org/pod/Crypt::SSLeay
