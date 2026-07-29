@@ -6,13 +6,14 @@
 Summary:	Support for the https protocol under LWP
 Name:		perl-%{modname}
 Version:	0.72
-Release:	3
+Release:	4
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		https://metacpan.org/pod/Crypt::SSLeay
 Source0:	ftp://ftp.cpan.org/pub/CPAN/modules/by-module/Crypt/Crypt-SSLeay-%{version}.tar.gz
 Patch1:		Crypt-SSLeay-0.72-Do-not-use-SSLv2_client_method-with-OpenSSL-1.1.0.patch
 Patch2:		Crypt-SSLeay-0.72-Fix-building-on-Perl-without-dot-in-INC.patch
+Patch3:	Crypt-SSLeay-0.72-openssl3-asn1-time.patch
 BuildRequires:	make
 BuildRequires:	pkgconfig(openssl)
 BuildRequires:	pkgconfig(zlib)
